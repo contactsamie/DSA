@@ -147,6 +147,26 @@ class LinkedList {
         }
         return this;
     }
+    printLeftToRight(node) {
+        if (node == null) {
+            return this.printLeftToRight(this.head); // start with head
+        } else if (node.next != null) {  // recurse all the way to the end
+            var result = this.printLeftToRight(node.next);
+            return node.value + "" + result; // on your way back up, prepend
+        } else {
+            return node.value; // at the end do this
+        }
+    }
+    printRightToLeft(node) { // print in reverse order
+        if (node == null) {
+            return this.printRightToLeft(this.head); // start with head
+        } else if (node.next != null) {  // recurse all the way to the end
+            var result = this.printRightToLeft(node.next);
+            return result + "" + node.value; // on your way back up, append
+        } else {
+            return node.value; // at the end do this
+        }
+    }
 }
 const list = new LinkedList();
 list.append(2).test("-[2]-");
@@ -174,3 +194,7 @@ list.reverseByRef().test("-[2]--[4]--[5]--[6]--[8]-");
 list.append(9).test("-[2]--[4]--[5]--[6]--[8]--[9]-");
 list.reverseByRef().test("-[9]--[8]--[6]--[5]--[4]--[2]-");
 list.reverseByRef().test("-[2]--[4]--[5]--[6]--[8]--[9]-");
+console.log("got " + list.printLeftToRight());
+console.log("Expecting 245689");
+console.log("got " + list.printRightToLeft());
+console.log("Expecting 986542");
