@@ -3,10 +3,7 @@ function factorial(n) {
     if (n == 0 || n == 1) {
         return 1;
     }
-    let result = 1;
-    if (n > 0) { 
-        result = factorial(n - 1);
-    }
+    let result = factorial(n - 1);
     console.log("computing for " + n);
     return n * result;
 }
