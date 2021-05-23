@@ -1,15 +1,30 @@
-//What is recussion ?
-//1. a way to move along paths
-//2. a way to
+/*
 
-// steps to solving recussion
-// 0. write down the example
-// 1. stack overflow avoidnce strategy
-// 2. pattern recognition strategy
-// 3. mathematical represntation
-// 3. define next step
-// 4. special cases if avaialable
 
+bt.insert("d");
+bt.insert("l");
+bt.insert("b");
+bt.insert("f");
+bt.insert("j");
+bt.insert("n");
+bt.insert("a");
+bt.insert("c");
+bt.insert("e");
+bt.insert("g");
+bt.insert("i");
+bt.insert("k");
+bt.insert("m");
+bt.insert("o");
+
+                     h
+          /                     \
+         d                       l
+    /         \             /         \
+   b           f           j           n
+ /   \       /   \       /   \       /   \
+a     c     e     g     i     k     m     o
+
+*/
 function printTree(inorder, bredthOrder, size) {
    size = size || 2;
    const total = inorder.length;
@@ -170,14 +185,3 @@ bt.insert("o");
 let io = bt.printInOrder();
 let bo = bt.printBredthOrder();
 printTree(io, bo);
-/*
-                     h
-          /                     \
-         5                       7
-    /         \             /         \
-   4           e           f           g
- /   \       /   \       /   \       /   \
-a  b  c  d  e  f  g  h  i  j  k  l  m  n  o
-*/
-
-//
